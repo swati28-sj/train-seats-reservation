@@ -1,0 +1,35 @@
+<div class="reservation-container">
+    <h1>Train Seat Reservation</h1>
+    <div class="seat-layout">
+        <div *ngFor="let row of seats; let rowIndex = index" class="seat-row">
+            <button *ngFor="let seat of row; let seatIndex = index"
+                [ngClass]="{'available': seat === 'A', 'booked': seat === 'B'}">
+                {{ (rowIndex * 7 + seatIndex + 1) }} <!-- Display seat number -->
+            </button>
+        </div>
+    </div>
+
+    <div>
+        <label for="numSeats">Number of seats to reserve (1-7):</label>
+        <input type="number" [(ngModel)]="numSeatsToReserve" min="1" max="7" id="numSeats" />
+        <button (click)="reserveSeats()">Reserve Seats</button>
+    </div>
+
+    <div *ngIf="lastBookedSeats.length > 0">
+        <h3>Booked Seats:</h3>
+        <p>Seat Numbers: {{ lastBookedSeats.join(', ') }}</p>
+    </div>
+
+    <div class="seat-count-buttons">
+        <button class="available-count" disabled>
+            Available Seats: {{ getAvailableSeatsCount() }}
+        </button>
+        <button class="booked-count" disabled>
+            Booked Seats: {{ reservedSeats }}
+        </button>
+    </div>
+
+    <div>
+        <h2>Reserved Seats: {{ reservedSeats }} / {{ totalSeats }}</h2>
+    </div>
+</div>

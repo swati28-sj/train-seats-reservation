@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+  }
+  
+  .reservation-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+  }
+  
+  .seat-layout {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+  
+  .seat-row {
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+  }
+  
+  .seat-row button {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s; /* Smooth transition for hover */
+  }
+  
+  .seat-row button.available {
+    background-color: #ffeb3b; /* Yellow for available seats */
+  }
+  
+  .seat-row button.booked {
+    background-color: #28a745; /* Green for booked seats */
+    color: white;
+  }
+  
+  .seat-count-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .available-count, .booked-count {
+    flex: 1;
+    margin: 0 5px;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: default; /* Disabled button, not clickable */
+    font-size: 16px;
+  }
+  
+  .available-count {
+    background-color: #ffc107; /* Yellow for available count */
+  }
+  
+  .booked-count {
+    background-color: #28a745; /* Green for booked count */
+  }
+  
+  button:hover {
+    opacity: 0.8; /* Slightly dim on hover */
+  }
+  
